@@ -1,0 +1,30 @@
+import random
+
+
+escolhas = {1: "PEDRA", 2: "PAPEL", 3: "TESOURA"}
+
+
+print("Escolha 1 para PEDRA, 2 para PAPEL ou 3 para TESOURA")
+choice_usu = int(input("Entre com a sua escolha: "))
+
+
+if choice_usu not in escolhas:
+    print("Escolha inválida!")
+else:
+    
+    choice_pc = random.randint(1, 3)
+    
+
+    print(f"Usuário: {escolhas[choice_usu]} Computador: {escolhas[choice_pc]}")
+    
+   
+    if choice_usu == choice_pc:
+        print("Empate!")
+    elif choice_usu == 1 and choice_pc == 3:
+        print("Usuário ganhou!")
+    elif choice_usu == 2 and choice_pc == 1:
+        print("Usuário ganhou!")
+    elif choice_usu == 3 and choice_pc == 2:
+        print("Usuário ganhou!")
+    else:
+        print("Computador ganhou!")
