@@ -1,0 +1,20 @@
+doacao = float(input( " Valor da doação : "))
+doador = 0
+totaldoac=0
+while doacao > 0:
+    doador += 1 
+    totaldoac += doacao
+    doacao = float(input( " Valor da doação : "))
+
+media = totaldoac/doador
+
+
+
+
+
+if doador != 0:
+    print ( " Foram doados %.2f por %d pessoas e a media é %.2f "%(totaldoac,doador,media))
+else : 
+    print ( " Não houve doação")
+
+    
