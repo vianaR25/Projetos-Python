@@ -1,0 +1,110 @@
+# 1) Escreva uma função que receba uma lista 
+# de inteiros e exiba cada elemento em uma 
+# linha
+
+def exibe_lista(lst):    
+    for elem in lst:
+        print(elem)
+        
+ 
+#VS2: usando while
+def exibe_lista_VS2(lst): 
+    ind=0
+    tamanho = len(lst)
+    while ind < tamanho:
+        print(lst[ind])
+        ind+=1
+        
+
+
+# 2) Escreva uma função que receba uma lista 
+# de inteiros e retorne a soma dos valores 
+# da lista
+
+def calc_soma(lst):
+    soma=0
+    for elem in lst:
+        soma+=elem
+    return soma
+    
+
+# 3) Escreva uma função que receba uma lista 
+# de nomes e um nome e retorne a posição (índice) 
+# do nome na lista, se encontrado, ou -1,
+# caso contrário
+
+def busca_nome(lst, nomeProc):
+    ind = 0
+    tamanho = len(lst)
+    while ind < tamanho:
+        if lst[ind]== nomeProc:
+            return ind  #ACHOU: termina a funcao
+        ind+=1
+    #Após o término da repetição
+    return -1 # Todos os elementos foram testados e proc 
+              # não foi encontrado
+     
+
+# 4) Escreva uma função que receba uma lista 
+# de inteiros e dobre o valor dos elementos 
+# nas posições pares da lista
+def dobra_nas_posicoes_pares(lst):
+    ind = 0
+    tamanho = len(lst)
+    while ind<tamanho:
+        if ind %2 == 0:
+            lst[ind]= 2*lst[ind]
+        ind+=1
+ 
+def dobra_nas_posicoes_pares_VS2(lst):
+    ind = 0
+    tamanho = len(lst)
+    while ind<tamanho:
+        lst[ind]= 2*lst[ind]
+        ind+=2        
+ 
+    
+
+#BLOCO PRINCIPAL
+
+lnum=[12,31,25,13,4,20]
+
+lnomes=['lala','buba','didi','zeze','babu','pepa']
+
+
+print('--- exibe_lista----')
+exibe_lista(lnum)
+
+print('--- exibe_lista_VS2----')
+exibe_lista_VS2(lnum)
+
+print('--- exibe_lista----')
+exibe_lista(lnomes)
+
+print('--- calc_soma----')
+resp= calc_soma(lnum)
+print('Soma:',resp)
+
+print('--- busca_nome----')
+nome='zeze'
+pos= busca_nome(lnomes,nome)
+if pos != -1:
+    print('%s encontrado na posição %d'%(nome,pos))
+else:
+    print('%s não está na lista'%nome)
+    
+nome='juju'
+pos= busca_nome(lnomes,nome)
+if pos != -1:
+    print('%s encontrado na posição %d'%(nome,pos))
+else:
+    print('%s não está na lista'%nome)    
+
+print('--- dobra_nas_posicoes_pares----') 
+print('Antes:',lnum)   
+dobra_nas_posicoes_pares_VS2 (lnum)   
+print('Depois:',lnum)  
+
+
+
+
